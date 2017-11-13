@@ -97,3 +97,64 @@ node_modules
 #### Conclusions
 
 In this exercise you learnt to set up package.json, install a npm package and start a development server.
+
+### Getting Started with Angular
+
+#### Objectives and Outcomes
+
+In this first Angular exercise, you will first install *angular-cli*, the command line tool for scaffolding Angular applications. You will then use the tool to scaffold out a basic Angular application. We will thereafter develop this application into a full-fledged Angular application in the process of doing the exercises in this course. At the end of this exercise you will be able to:
+
+- Install *angular-cli*
+- Scaffold out a basic Angular application
+
+#### Installing *Angular-CLI*
+
+From the Angular-CLI documentation we learn that the Angular-CLI makes it easy to create an application that already works, right out of the box. It already follows the best practices suggested by the Angular community!
+
+- To install *angular-cli* globally, type the following at the prompt:
+
+```
+npm install -g @angular/cli
+```
+
+**Note**:Use *sudo* on a Mac and Linux
+
+- This will make the command line tool for creating Angular applications. To learn more about the various commands that this CLI provides, type at the prompt:
+
+```
+ng help
+```
+
+#### Generating and Serving an Angular Project using Angular-CLI
+
+- At a convenient location on your computer, create a folder named *Angular* and move into that folder.
+- Then type the following at the prompt to create a new Angular application named *conFusion*:
+
+```
+ng new conFusion -dir=<The path of your Angular folder>/conFusion --style=scss
+```
+
+- This should create a new folder named *conFusion* within your *Angular* folder and create the Angular application in that folder.
+- Move to the conFusion folder and type the following at the prompt:
+
+```
+npm install
+ng serve --open
+```
+
+- This will compile the project and then open a tab in your default browser at the address http://localhost:4200.
+- You can initialize your project to be a Git repository by typing the following commands at the prompt:
+
+```
+git init
+git add .
+git commit -m "Initial Setup"
+```
+
+**Note**: Some of you may find that Angular CLI automatically does the first commit on your computer and initializes the Git repository. Please do a "git status" in the project folder just to check if an automatic commit has been done. This doesn't happen on my computer. Hence the above instructions.
+
+- Thereafter you can set up an online Git repository and synchronize your project to the online repository. Make sure that the online Git repository is a private repository.
+
+#### Conclusions
+
+In this exercise you installed the Angular CLI tool and created a basic Angular project and served up the compiled project to your browser.
