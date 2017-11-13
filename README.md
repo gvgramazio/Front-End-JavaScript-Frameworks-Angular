@@ -50,7 +50,7 @@ npm install lite-server --save-dev
 - You can check out more documentation on lite-server [here](https://github.com/johnpapa/lite-server).
 - Next, open package.json in your editor and modify it as shown below. Note the addition of two lines, line 7 and line 9.
 
-```
+```JSON
 {
   "name": "git-test",
   "version": "1.0.0",
