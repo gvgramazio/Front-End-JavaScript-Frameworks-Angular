@@ -1,4 +1,25 @@
-# Front-End JavaScript Frameworks: Angular
+Table of Contents
+=================
+
+- [Introduction](#introduction)
+- [Week 1](#week-1)
+	- [Basics of Node.js and NPM](#basics-of-nodejs-and-npm)
+		- [Objectives and Outcomes](#objectives-and-outcomes)
+		- [Initializing package.json](#initializing-packagejson)
+		- [Installing an NPM Module](#installing-an-npm-module)
+		- [Setting up .gitignore](#setting-up-gitignore)
+		- [Conclusions](#conclusions)
+	- [Getting Started with Angular](#getting-started-with-angular)
+		- [Objectives and Outcomes](#objectives-and-outcomes-1)
+		- [Installing *Angular-CLI*](#installing-angular-cli)
+		- [Generating and Serving an Angular Project using Angular-CLI](#generating-and-serving-an-angular-roject-using-angular-cli)
+		- [Conclusions](#conclusions-1)
+- [Week 2](#week-2)
+- [Week 3](#week-3)
+- [Week 4](#week-4)
+
+Introduction
+============
 
 About this course: This course concentrates mainly on Javascript based front-end frameworks, and in particular the Angular framework (Currently Ver. 4.x). This course will use Typescript for developing Angular application. Typescript features will be introduced in the context of Angular as part of the exercises. You will also get an introduction to the use of Angular Material and Angular Flex-Layout for responsive UI design. You will be introduced to various aspects of Angular including components, directives and services. You will learn about data binding, Angular router and its use for developing single-page applications. You will also learn about designing both template-driven forms and reactive forms. A quick introduction to Observables, reactive programming and RxJS in the context of Angular is included. You will then learn about Angular support for client-server communication and the use of REST API on the server side. You will use Restangular for communicating with a server supporting the REST API. A quick tour through Angular animation support and Angular testing rounds off the course. You must have either completed the previous course in the specialization on Bootstrap 4, or have a working knowledge of front end web-UI frameworks to be able to navigate this course. Also a good working knowledge of JavaScript, especially ES 5 is strongly recommended.
 
@@ -17,38 +38,72 @@ Who is this class for: This course is aimed at students with sufficient knowledg
 
 https://www.coursera.org/learn/angular
 
-## Week 1
+Week 1
+======
 
-### Basics of Node.js and NPM
+- [Basics of Node.js and NPM](#basics-of-nodejs-and-npm)
+	- [Objectives and Outcomes](#objectives-and-outcomes)
+	- [Initializing package.json](#initializing-packagejson)
+	- [Installing an NPM Module](#installing-an-npm-module)
+	- [Setting up .gitignore](#setting-up-gitignore)
+	- [Conclusions](#conclusions)
+- [Getting Started with Angular](#getting-started-with-angular)
+	- [Objectives and Outcomes](#objectives-and-outcomes-1)
+	- [Installing *Angular-CLI*](#installing-angular-cli)
+	- [Generating and Serving an Angular Project using Angular-CLI](#generating-and-serving-an-angular-roject-using-angular-cli)
+	- [Conclusions](#conclusions-1)
+- [Configuring your Angular Application](#configuring-your-angular-application)
+	- Objectives and Outcomes
+	- Configure your Angular Project to use Angular Material
+	- Configure to use Material Design Icons
+	- Configure your Angular Project to use Flex Layout
+	- Updating AppModule
+	- Adding a Material Toolbar
+	- Adding Styles
+	- Conclusions
+- Angular Components Part 1
+	- Exercise Resources
+	- Objectives and Outcomes
+	- Adding a Menu Component
+	- Creating the Menu
+	- Conclusions
+- [Angular Components Part 2](#angular-components-part 2)
+	- [Objectives and Outcomes]()
+	- [Updating the Menu Template](#updating-the-menu-template)
+	- [Add a Card Component](#add-a-card-omponent)
+	- [Conclusions](#conclusions)
 
-#### Objectives and Outcomes
+Basics of Node.js and NPM
+-------------------------
+
+### Objectives and Outcomes
 
 In this exercise you will learn the basics of Node and NPM. At the end of this exercise, you will be able to:
 
 - Set up package.json file in the project folder for configuring your Node and NPM for this project
 - Install a NPM module and make use of it within your project
 
-#### Initializing package.json
+### Initializing package.json
 
-#### At the command prompt in your **git-test** folder, type
+At the command prompt in your **git-test** folder, type
 
 ```
 npm init
 ```
 
-- Follow along the prompts and answer the questions as follows: accept the default values for most of the entries, except set the entry point to index.html
-- This should create a *package.json* file in your **git-test** folder.
+Follow along the prompts and answer the questions as follows: accept the default values for most of the entries, except set the entry point to index.html
+This should create a *package.json* file in your **git-test** folder.
 
-#### Installing an NPM Module
+### Installing an NPM Module
 
-- Install an NPM module, lite-server, that allows you to run a Node.js based development web server and serve up your project files. To do this, type the following at the prompt:
+Install an NPM module, lite-server, that allows you to run a Node.js based development web server and serve up your project files. To do this, type the following at the prompt:
 
 ```
 npm install lite-server --save-dev
 ```
 
-- You can check out more documentation on lite-server [here](https://github.com/johnpapa/lite-server).
-- Next, open package.json in your editor and modify it as shown below. Note the addition of two lines, line 7 and line 9.
+You can check out more documentation on lite-server [here](https://github.com/johnpapa/lite-server).
+Next, open package.json in your editor and modify it as shown below. Note the addition of two lines, line 7 and line 9.
 
 ```JSON
 {
@@ -75,43 +130,44 @@ npm install lite-server --save-dev
 
 ```
 
-- Next, start the development server by typing the following at the prompt:
+Next, start the development server by typing the following at the prompt:
 
 ```
 npm start
 ```
 
-- This should open your *index.html* page in your default browser.
-- If you now open the *index.html* page in an editor and make changes and save, the browser should immediately refresh to reflect the changes.
+This should open your *index.html* page in your default browser.
+If you now open the *index.html* page in an editor and make changes and save, the browser should immediately refresh to reflect the changes.
 
-#### Setting up .gitignore
+### Setting up .gitignore
 
-- Next, create a file in your project directory named *.gitignore* (**Note**: the name starts with a period)Then, add the following to the .gitignore file
+Next, create a file in your project directory named *.gitignore* (**Note**: the name starts with a period)Then, add the following to the .gitignore file
 
 ```
 node_modules
 ```
 
-- The do a git commit and push the changes to the online repository. You will note that the node_modules folder will not be added to the commit, and will not be uploaded to the repository.
+The do a git commit and push the changes to the online repository. You will note that the node_modules folder will not be added to the commit, and will not be uploaded to the repository.
 
-#### Conclusions
+### Conclusions
 
 In this exercise you learnt to set up package.json, install a npm package and start a development server.
 
-### Getting Started with Angular
+Getting Started with Angular
+----------------------------
 
-#### Objectives and Outcomes
+### Objectives and Outcomes
 
 In this first Angular exercise, you will first install *angular-cli*, the command line tool for scaffolding Angular applications. You will then use the tool to scaffold out a basic Angular application. We will thereafter develop this application into a full-fledged Angular application in the process of doing the exercises in this course. At the end of this exercise you will be able to:
 
 - Install *angular-cli*
 - Scaffold out a basic Angular application
 
-#### Installing *Angular-CLI*
+### Installing *Angular-CLI*
 
 From the Angular-CLI documentation we learn that the Angular-CLI makes it easy to create an application that already works, right out of the box. It already follows the best practices suggested by the Angular community!
 
-- To install *angular-cli* globally, type the following at the prompt:
+To install *angular-cli* globally, type the following at the prompt:
 
 ```
 npm install -g @angular/cli
@@ -119,31 +175,31 @@ npm install -g @angular/cli
 
 **Note**:Use *sudo* on a Mac and Linux
 
-- This will make the command line tool for creating Angular applications. To learn more about the various commands that this CLI provides, type at the prompt:
+This will make the command line tool for creating Angular applications. To learn more about the various commands that this CLI provides, type at the prompt:
 
 ```
 ng help
 ```
 
-#### Generating and Serving an Angular Project using Angular-CLI
+### Generating and Serving an Angular Project using Angular-CLI
 
-- At a convenient location on your computer, create a folder named *Angular* and move into that folder.
-- Then type the following at the prompt to create a new Angular application named *conFusion*:
+At a convenient location on your computer, create a folder named *Angular* and move into that folder.
+Then type the following at the prompt to create a new Angular application named *conFusion*:
 
 ```
 ng new conFusion -dir=<The path of your Angular folder>/conFusion --style=scss
 ```
 
-- This should create a new folder named *conFusion* within your *Angular* folder and create the Angular application in that folder.
-- Move to the conFusion folder and type the following at the prompt:
+This should create a new folder named *conFusion* within your *Angular* folder and create the Angular application in that folder.
+Move to the conFusion folder and type the following at the prompt:
 
 ```
 npm install
 ng serve --open
 ```
 
-- This will compile the project and then open a tab in your default browser at the address http://localhost:4200.
-- You can initialize your project to be a Git repository by typing the following commands at the prompt:
+This will compile the project and then open a tab in your default browser at the address http://localhost:4200.
+You can initialize your project to be a Git repository by typing the following commands at the prompt:
 
 ```
 git init
@@ -153,22 +209,23 @@ git commit -m "Initial Setup"
 
 **Note**: Some of you may find that Angular CLI automatically does the first commit on your computer and initializes the Git repository. Please do a "git status" in the project folder just to check if an automatic commit has been done. This doesn't happen on my computer. Hence the above instructions.
 
-- Thereafter you can set up an online Git repository and synchronize your project to the online repository. Make sure that the online Git repository is a private repository.
+Thereafter you can set up an online Git repository and synchronize your project to the online repository. Make sure that the online Git repository is a private repository.
 
-#### Conclusions
+### Conclusions
 
 In this exercise you installed the Angular CLI tool and created a basic Angular project and served up the compiled project to your browser.
 
-### Configuring your Angular Application
+Configuring your Angular Application
+------------------------------------
 
-#### Objectives and Outcomes
+### Objectives and Outcomes
 
 In this exercise we will set up our project to use Angular Material and Angular Flex Layout. We will then introduce our first Angular Material component into our application. At the end of this exercise you will be able to:
 
 - Configure your Angular project to use Angular Material and Flex Layout.
 - Start using Material components in your application.
 
-#### Configure your Angular Project to use Angular Material
+### Configure your Angular Project to use Angular Material
 
 **Note**: This course is designed with Angular Material Beta.3. Before you proceed forward, you may wish to read the detailed information posted in https://www.coursera.org/learn/angular/discussions/all/threads/4yxVk7DXEee0mQrUfDuicA where I have clearly explained about dealing with the newer Beta versions of Angular Material (up to Beta.12). I would strongly suggest that to proceed ahead with the course with minimal disruption, please install the Beta.8 version of Angular Material. With this installation, the course instructions will still work as given.
 
@@ -181,7 +238,7 @@ npm install --save @angular/animations
 npm install --save hammerjs 
 ```
 
-#### Configure to use Material Design Icons
+### Configure to use Material Design Icons
 
 Next, include the following into the <head> of index.html to make use of Material Design icons:
 
@@ -189,7 +246,7 @@ Next, include the following into the <head> of index.html to make use of Materia
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
 ```
 
-#### Configure your Angular Project to use Flex Layout
+### Configure your Angular Project to use Flex Layout
 
 Next, install Angular Flex Layout as follows:
 
@@ -197,7 +254,7 @@ Next, install Angular Flex Layout as follows:
 npm install --save @angular/flex-layout@latest 
 ```
 
-#### Updating AppModule
+### Updating AppModule
 
 Then, you need to import the Angular Animations Module, Angular Material Module, Flex Layout Module and hammerjs into your root module (src/app/app.module.ts) as follows:
 
@@ -234,7 +291,7 @@ import 'hammerjs';
 . . . 
 ```
 
-#### Adding a Material Toolbar
+### Adding a Material Toolbar
 
 Open app.component.html and replace its contents with the following code:
 
@@ -242,7 +299,7 @@ Open app.component.html and replace its contents with the following code:
 <md-toolbar color="primary"> <span>Ristorante Con Fusion</span> </md-toolbar>
 ```
 
-#### Adding Styles
+### Adding Styles
 
 Add the following styles to styles.scss file:
 
@@ -262,24 +319,25 @@ body {
 This will add a built-in Material theme to our application.
 Do a Git commit with the message "Configuring Angular"
 
-#### Conclusions
+### Conclusions
 
 In this exercise we learnt to use Angular Material and Flex Layout NgModules in our Angular application.
 
-### Angular Components Part 1
+Angular Components Part 1
+-------------------------
 
-#### Exercise Resources
+### Exercise Resources
 
 [images.zip](resources/_db284e833226b010f3e252d9220f85d5_images.zip)
 
-#### Objectives and Outcomes
+### Objectives and Outcomes
 
 In this exercise you will add the first component to your Angular application and update its template. At the end of this exercise you will be able to:
 
 - Add components to your Angular application
 - Update the templates of your component.
 
-#### Adding a Menu Component
+### Adding a Menu Component
 
 First, download the images.zip file provided above and then unzip the file. Move the resulting images folder containing some PNG files to the Angular project's src/assets folder. These image files will be useful for our exercises.
 Next, use the CLI's ng generate command to generate a new component named menu as follows:
@@ -295,7 +353,7 @@ Next, open app.component.html file and add the following after the toolbar:
 <app-menu></app-menu>
 ```
 
-#### Creating the Menu
+### Creating the Menu
 
 Next, create a folder named shared under the src/app folder. To this folder, add a file named dish.ts with the following code:
 
@@ -318,37 +376,40 @@ import { Dish } from '../shared/dish';
 . . .
 
 export class MenuComponent implements OnInit {
-
-  dishes: Dish[] = [
-                         {
-                           name:'Uthappizza',
-                           image: '/assets/images/uthappizza.png',
-                           category: 'mains',
-                           label:'Hot',
-                           price:'4.99',
-                           description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.'                        },
-                        {
-                           name:'Zucchipakoda',
-                           image: '/assets/images/zucchipakoda.png',
-                           category: 'appetizer',
-                           label:'',
-                           price:'1.99',
-                           description:'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce'                        },
-                        {
-                           name:'Vadonut',
-                           image: '/assets/images/vadonut.png',
-                           category: 'appetizer',
-                           label:'New',
-                           price:'1.99',
-                           description:'A quintessential ConFusion experience, is it a vada or is it a donut?'                        },
-                        {
-                           name:'ElaiCheese Cake',
-                           image: '/assets/images/elaicheesecake.png',
-                           category: 'dessert',
-                           label:'',
-                           price:'2.99',
-                           description:'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms'                        }
-                        ];
+	dishes: Dish[] = [
+		{
+			name:'Uthappizza',
+			image: '/assets/images/uthappizza.png',
+			category: 'mains',
+			label:'Hot',
+			price:'4.99',
+			description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.'
+		},
+		{
+			name:'Zucchipakoda',
+			image: '/assets/images/zucchipakoda.png',
+			category: 'appetizer',
+			label:'',
+			price:'1.99',
+			description:'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce.'
+		},
+		{
+			name:'Vadonut',
+			image: '/assets/images/vadonut.png',
+			category: 'appetizer',
+			label:'New',
+			price:'1.99',
+			description:'A quintessential ConFusion experience, is it a vada or is it a donut?'
+		},
+		{
+			name:'ElaiCheese Cake',
+			image: '/assets/images/elaicheesecake.png',
+			category: 'dessert',
+			label:'',
+			price:'2.99',
+			description:'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms.'
+		}
+	];
 . . .
 }
 ```
@@ -384,6 +445,34 @@ Add the following CSS class to styles.scss file:
 
 Save all changes and do a Git commit with the message "Components Part 1".
 
-#### Conclusions
+### Conclusions
 
 In this exercise we added a new component to our Angular application, added data to its class, and then updated the component template to show the information in the web page.
+
+Angular Components Part 2
+-------------------------
+
+### Objectives and Outcomes
+
+In this exercise we will continue modifying the component template from the previous exercise. Instead of a list, we will use a grid list Angular material component to display the menu in a different way. Also we will use the Card component to display the details of a selected dish. At the end of this exercise you will be able to:
+
+- Make use of the Angular material grid list component to display a list of items.
+- Use the material Card component to display detailed information.
+- Use a built-in Angular pipe to turn a word into uppercase in the template.
+
+### Updating the Menu Template
+
+Open menu.component.html and update its content as follows:
+
+Here we are using the Grid list Angular material component to display the information.
+Also, update the menu.component.ts file as follows to move the details of the dishes into a constant, in preparation for introducing services in a future exercise:
+
+### Add a Card Component
+
+Update the menu.component.html template to display the details of a selected dish using the Material Card component as follows:
+
+Save the changes and do a Git commit with the message "Components Part 2".
+
+### Conclusions
+
+In this exercise we used a grid list to display the information in the menu template. Also we used a card to display the details of a selected dish.
