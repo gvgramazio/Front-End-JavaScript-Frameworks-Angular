@@ -265,3 +265,125 @@ Do a Git commit with the message "Configuring Angular"
 #### Conclusions
 
 In this exercise we learnt to use Angular Material and Flex Layout NgModules in our Angular application.
+
+### Angular Components Part 1
+
+#### Exercise Resources
+
+[images.zip](resources/_db284e833226b010f3e252d9220f85d5_images.zip)
+
+#### Objectives and Outcomes
+
+In this exercise you will add the first component to your Angular application and update its template. At the end of this exercise you will be able to:
+
+- Add components to your Angular application
+- Update the templates of your component.
+
+#### Adding a Menu Component
+
+First, download the images.zip file provided above and then unzip the file. Move the resulting images folder containing some PNG files to the Angular project's src/assets folder. These image files will be useful for our exercises.
+Next, use the CLI's ng generate command to generate a new component named menu as follows:
+
+```
+ng generate component menu
+```
+
+This will create the necessary files for the menu component in a folder named menu, and also import this component into app.module.ts.
+Next, open app.component.html file and add the following after the toolbar:
+
+```HTML
+<app-menu></app-menu>
+```
+
+#### Creating the Menu
+
+Next, create a folder named shared under the src/app folder. To this folder, add a file named dish.ts with the following code:
+
+```
+export class Dish {
+    name: string;
+    image: string;
+    category: string;
+    label: string;
+    price: string;
+    description: string;
+}
+```
+
+Update menu.component.ts as follows to add in the data for four menu items:
+
+```
+. . .
+import { Dish } from '../shared/dish';
+. . .
+
+export class MenuComponent implements OnInit {
+
+  dishes: Dish[] = [
+                         {
+                           name:'Uthappizza',
+                           image: '/assets/images/uthappizza.png',
+                           category: 'mains',
+                           label:'Hot',
+                           price:'4.99',
+                           description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.'                        },
+                        {
+                           name:'Zucchipakoda',
+                           image: '/assets/images/zucchipakoda.png',
+                           category: 'appetizer',
+                           label:'',
+                           price:'1.99',
+                           description:'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce'                        },
+                        {
+                           name:'Vadonut',
+                           image: '/assets/images/vadonut.png',
+                           category: 'appetizer',
+                           label:'New',
+                           price:'1.99',
+                           description:'A quintessential ConFusion experience, is it a vada or is it a donut?'                        },
+                        {
+                           name:'ElaiCheese Cake',
+                           image: '/assets/images/elaicheesecake.png',
+                           category: 'dessert',
+                           label:'',
+                           price:'2.99',
+                           description:'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms'                        }
+                        ];
+. . .
+}
+```
+
+Next, update the menu.component.html template as follows:
+
+```HTML
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+<md-list fxFlex>
+  <md-list-item *ngFor="let dish of dishes">
+    <img md-list-avatar src={{dish.image}} alt={{dish.name}}>
+    <h1 md-line> {{dish.name}} </h1>
+    <p md-line>
+      <span> {{dish.description}} </span>
+    </p>
+  </md-list-item>
+</md-list>
+
+</div>
+```
+
+Add the following CSS class to styles.scss file:
+
+```CSS
+.container {
+    margin: 20px;
+    display:flex;
+}
+```
+
+Save all changes and do a Git commit with the message "Components Part 1".
+
+#### Conclusions
+
+In this exercise we added a new component to our Angular application, added data to its class, and then updated the component template to show the information in the web page.
