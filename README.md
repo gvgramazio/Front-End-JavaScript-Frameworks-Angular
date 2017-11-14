@@ -538,3 +538,119 @@ Save the changes and do a Git commit with the message "Components Part 2".
 ### Conclusions
 
 In this exercise we used a grid list to display the information in the menu template. Also we used a card to display the details of a selected dish.
+
+Assignment 1: Angular Components
+--------------------------------
+
+### Instructions
+
+In this assignment you will add a new component to the Angular application to show the details of a selected dish. 
+You will use the Angular Material card component and the list component to prepare the template for this new component.
+
+### Objectives and Outcomes
+
+In this assignment, you will continue to work with the Angular application that you have been developing in the exercises. You will add a new component named dishdetail that will display the details of a selected dish. You will then design the template for the component using Angular material components. At the end of this assignment, you should have completed the following tasks:
+
+- Created a new dishdetail component and added it to your Angular application and included it into the template of the menu component.
+- Updated the template of the dishdetail component to display the details of the selected dish using an Angular card component.
+- Updated the template of the dishdetail component to display the list of comments about the dish using the Angular material list component.
+
+### Assignment Requirements
+
+This assignment requires you to complete the following tasks. Detailed instructions for each task are given below. The picture of the completed web page included below indicates the location within the web page that will be updated by the three tasks.
+
+### Task 1
+
+In this task you will be adding a new dishdetail component to your Angular application and include the component into the menu component's template so that the details of a specific dish are displayed there:
+
+- Use Angular CLI to create a new component named dishdetail,
+- Replace the card showing the selected dish in menu component's template with the dishdetail component, and
+- Update the template of the dishdetail component with the following code:
+
+```html
+<div class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+
+  <div fxFlex="40">
+    <p>Display the details of the Dish here</p>
+  </div>
+
+  <div fxFlex="40">
+    <p>Display the list of comments here</p>
+  </div>
+
+</div>
+```
+
+### Task 2
+
+In this task you will be adding a card component to the dishdetail template to display the details of the dish given above:
+
+- Add a new constant to the dishdetail.component.ts file named DISH as follows, and initialize it to the JavaScript object given below that contains the details of the dish and comments about the dish:
+
+```ts
+const DISH = {
+  name: 'Uthappizza',
+  image: '/assets/images/uthappizza.png',
+  category: 'mains',
+  label: 'Hot',
+  price: '4.99',
+  description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
+  comments: [
+    {
+      rating: 5,
+      comment: "Imagine all the eatables, living in conFusion!",
+      author: "John Lemon",
+      date: "2012-10-16T17:57:28.556094Z"
+    },
+    {
+      rating: 4,
+      comment: "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+      author: "Paul McVites",
+      date: "2014-09-05T17:57:28.556094Z"
+    },
+    {
+      rating: 3,
+      comment: "Eat it, just eat it!",
+      author: "Michael Jaikishan",
+      date: "2015-02-13T17:57:28.556094Z"
+    },
+    {
+      rating: 4,
+      comment: "Ultimate, Reaching for the stars!",
+      author: "Ringo Starry",
+      date: "2013-12-02T17:57:28.556094Z"
+    },
+    {
+      rating: 2,
+      comment: "It's your birthday, we're gonna party!",
+      author: "25 Cent",
+      date: "2011-12-02T17:57:28.556094Z"
+    }
+  ]
+};
+```
+
+  **NOTE**: Do not use the Dish type from the dish.ts file to declare either the const DISH or the variable dish below to be of the type Dish. We need to update the Dish type which will be done in the next module.
+
+- Now introduce a new variable in the dishdetail.component.ts file in the dishdetail class called dish and set it equal to the DISH constant above:
+
+```ts
+dish = DISH;
+```
+
+- The Angular material card component should be used to display the details of the dish as shown above. Please remember to use the Angular "uppercase" pipe on the name displayed in the card title. Also apply the \*ngIf="dish" structural directive to both the <md-card> that displays the details of the dish.
+
+### Task 3
+
+In this task you will use the comments that are included in the dish object above to display a list of the comments for the dish. Please use your JavaScript knowledge to recall how you would access an inner property in a JavaScript object that itself points to an array of JavaScript objects (comments). This task involves the following steps:
+
+- Use the Angular material list to display the list of comments as shown below. Also apply the *ngIf="dish" structural directive to both the <md-list> that displays the list of comments for the dish.
+- Display the date of the comment by processing it through the Angular built-in date pipe.
+
+![Result](resources/POMUDQ66EeeDpgoJnVyhvA_6efa3fc162f92db6794350a3346288a5_Assignment1.png)
