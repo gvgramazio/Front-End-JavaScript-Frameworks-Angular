@@ -4,16 +4,10 @@ Table of Contents
 - [Introduction](#introduction)
 - [Week 1](#week-1)
 	- [Basics of Node.js and NPM](#basics-of-nodejs-and-npm)
-		- [Objectives and Outcomes](#objectives-and-outcomes)
-		- [Initializing package.json](#initializing-packagejson)
-		- [Installing an NPM Module](#installing-an-npm-module)
-		- [Setting up .gitignore](#setting-up-gitignore)
-		- [Conclusions](#conclusions)
 	- [Getting Started with Angular](#getting-started-with-angular)
-		- [Objectives and Outcomes](#objectives-and-outcomes-1)
-		- [Installing *Angular-CLI*](#installing-angular-cli)
-		- [Generating and Serving an Angular Project using Angular-CLI](#generating-and-serving-an-angular-roject-using-angular-cli)
-		- [Conclusions](#conclusions-1)
+	- [Configuring your Angular Application](#configuring-your-angular-application)
+	- [Angular Components Part 1](#angular-components-part-1)
+	- [Angular Components Part 2](#angular-components-part-2)
 - [Week 2](#week-2)
 - [Week 3](#week-3)
 - [Week 4](#week-4)
@@ -53,25 +47,25 @@ Week 1
 	- [Generating and Serving an Angular Project using Angular-CLI](#generating-and-serving-an-angular-roject-using-angular-cli)
 	- [Conclusions](#conclusions-1)
 - [Configuring your Angular Application](#configuring-your-angular-application)
-	- Objectives and Outcomes
-	- Configure your Angular Project to use Angular Material
-	- Configure to use Material Design Icons
-	- Configure your Angular Project to use Flex Layout
-	- Updating AppModule
-	- Adding a Material Toolbar
-	- Adding Styles
-	- Conclusions
-- Angular Components Part 1
-	- Exercise Resources
-	- Objectives and Outcomes
-	- Adding a Menu Component
-	- Creating the Menu
-	- Conclusions
-- [Angular Components Part 2](#angular-components-part 2)
-	- [Objectives and Outcomes]()
+	- [Objectives and Outcomes](#objectives-and-outcomes-2)
+	- [Configure your Angular Project to use Angular Material](#configure-your-angular-project-to-use-angular-material)
+	- [Configure to use Material Design Icons](#configure-to-use-material-design-icons)
+	- [Configure your Angular Project to use Flex Layout](#configure-your-angular-project-to-use-flex-layout)
+	- [Updating AppModule](#updating-appmodule)
+	- [Adding a Material Toolbar](#adding-a-material-toolbar)
+	- [Adding Styles](#adding-styles)
+	- [Conclusions](#conclusions-2)
+- [Angular Components Part 1](#angular-components-part-1)
+	- [Exercise Resources](#exercise-resources)
+	- [Objectives and Outcomes](#objectives-and-outcomes-3)
+	- [Adding a Menu Component](#adding-a-menu-component)
+	- [Creating the Menu](#creating-the-menu)
+	- [Conclusions](#conclusions-3)
+- [Angular Components Part 2](#angular-components-part-2)
+	- [Objectives and Outcomes](#objectives-and-outcomes-4)
 	- [Updating the Menu Template](#updating-the-menu-template)
 	- [Add a Card Component](#add-a-card-omponent)
-	- [Conclusions](#conclusions)
+	- [Conclusions](#conclusions-4)
 
 Basics of Node.js and NPM
 -------------------------
@@ -105,7 +99,7 @@ npm install lite-server --save-dev
 You can check out more documentation on lite-server [here](https://github.com/johnpapa/lite-server).
 Next, open package.json in your editor and modify it as shown below. Note the addition of two lines, line 7 and line 9.
 
-```JSON
+```json
 {
   "name": "git-test",
   "version": "1.0.0",
@@ -242,7 +236,7 @@ npm install --save hammerjs
 
 Next, include the following into the <head> of index.html to make use of Material Design icons:
 
-```
+```html
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
 ```
 
@@ -258,7 +252,7 @@ npm install --save @angular/flex-layout@latest
 
 Then, you need to import the Angular Animations Module, Angular Material Module, Flex Layout Module and hammerjs into your root module (src/app/app.module.ts) as follows:
 
-```
+```ts
 . . . 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -295,7 +289,7 @@ import 'hammerjs';
 
 Open app.component.html and replace its contents with the following code:
 
-```
+```html
 <md-toolbar color="primary"> <span>Ristorante Con Fusion</span> </md-toolbar>
 ```
 
@@ -303,7 +297,7 @@ Open app.component.html and replace its contents with the following code:
 
 Add the following styles to styles.scss file:
 
-```
+```scss
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 // some basic resets 
@@ -349,7 +343,7 @@ ng generate component menu
 This will create the necessary files for the menu component in a folder named menu, and also import this component into app.module.ts.
 Next, open app.component.html file and add the following after the toolbar:
 
-```HTML
+```html
 <app-menu></app-menu>
 ```
 
@@ -357,7 +351,7 @@ Next, open app.component.html file and add the following after the toolbar:
 
 Next, create a folder named shared under the src/app folder. To this folder, add a file named dish.ts with the following code:
 
-```
+```ts
 export class Dish {
     name: string;
     image: string;
@@ -370,7 +364,7 @@ export class Dish {
 
 Update menu.component.ts as follows to add in the data for four menu items:
 
-```
+```ts
 . . .
 import { Dish } from '../shared/dish';
 . . .
@@ -416,7 +410,7 @@ export class MenuComponent implements OnInit {
 
 Next, update the menu.component.html template as follows:
 
-```HTML
+```html
 <div class="container"
      fxLayout="column"
      fxLayoutGap="10px">
@@ -436,7 +430,7 @@ Next, update the menu.component.html template as follows:
 
 Add the following CSS class to styles.scss file:
 
-```CSS
+```scss
 .container {
     margin: 20px;
     display:flex;
@@ -462,14 +456,82 @@ In this exercise we will continue modifying the component template from the prev
 
 ### Updating the Menu Template
 
-Open menu.component.html and update its content as follows:
+Open *menu.component.html* and update its content as follows:
+
+```html
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+      <h3>Menu</h3>
+      <hr>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <md-grid-list cols="2" rowHeight="200px">
+      <md-grid-tile *ngFor="let dish of dishes">
+        <img height="200px" src={{dish.image}} alt={{dish.name}}>
+        <md-grid-tile-footer>
+          <h1 md-line>{{dish.name | uppercase}}</h1>
+        </md-grid-tile-footer>
+      </md-grid-tile>
+    </md-grid-list>
+  </div>
+
+</div>
+```
 
 Here we are using the Grid list Angular material component to display the information.
-Also, update the menu.component.ts file as follows to move the details of the dishes into a constant, in preparation for introducing services in a future exercise:
+Also, update the *menu.component.ts* file as follows to move the details of the dishes into a constant, in preparation for introducing services in a future exercise:
+
+```ts
+ . . .
+ 
+ const DISHES: Dish[] = [
+ . . .
+ 
+ ];
+ 
+ . . .
+ 
+ export class MenuComponent implements OnInit {
+
+  dishes = DISHES;
+
+  selectedDish = DISHES[0];
+
+ . . .
+ 
+ }
+```
 
 ### Add a Card Component
 
 Update the menu.component.html template to display the details of a selected dish using the Material Card component as follows:
+
+```html
+  <div fxFlex *ngIf="selectedDish">
+    <md-card>
+      <md-card-header>
+        <md-card-title>
+          <h3>{{selectedDish.name | uppercase}}</h3>
+        </md-card-title>
+      </md-card-header>
+      <img md-card-image src={{selectedDish.image}} alt={{selectedDish.name}}>
+      <md-card-content>
+        <p>{{selectedDish.description}}
+        </p>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button>LIKE</button>
+        <button md-button>SHARE</button>
+      </md-card-actions>
+    </md-card>
+  </div>
+```
 
 Save the changes and do a Git commit with the message "Components Part 2".
 
