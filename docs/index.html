@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>index</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+        </script>
+        <script type="text/javascript" async src="file:////home/sczmrl/.atom/packages/markdown-preview-enhanced/node_modules/@shd101wyy/mume/dependencies/mathjax/MathJax.js"></script>
+        
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <p><a href="https://github.com/gvgramazio" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></p>
+<h1 class="mume-header" id="front-end-javascript-frameworks-angular">Front-End JavaScript Frameworks: Angular</h1>
+
+<div class="code-chunk" data-id="code-chunk-id-0" data-cmd="toc" data-code=""><div class="btn-group"><div class="run-btn btn"><span>▶︎</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div><div class="output-div"></div></div>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#week-1">Week 1</a>
+<ul>
+<li><a href="#basics-of-nodejs-and-npm">Basics of Node.js and NPM</a>
+<ul>
+<li><a href="#objectives-and-outcomes">Objectives and Outcomes</a></li>
+<li><a href="#initializing-packagejson">Initializing package.json</a></li>
+<li><a href="#installing-an-npm-module">Installing an NPM Module</a></li>
+<li><a href="#setting-up-gitignore">Setting up .gitignore</a></li>
+<li><a href="#conclusions">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#getting-started-with-angular">Getting Started with Angular</a>
+<ul>
+<li><a href="#objectives-and-outcomes-1">Objectives and Outcomes</a></li>
+<li><a href="#installing-angular-cli">Installing <em>Angular-CLI</em></a></li>
+<li><a href="#generating-and-serving-an-angular-project-using-angular-cli">Generating and Serving an Angular Project using Angular-CLI</a></li>
+<li><a href="#conclusions-1">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#configuring-your-angular-application">Configuring your Angular Application</a>
+<ul>
+<li><a href="#objectives-and-outcomes-2">Objectives and Outcomes</a></li>
+<li><a href="#configure-your-angular-project-to-use-angular-material">Configure your Angular Project to use Angular Material</a></li>
+<li><a href="#configure-to-use-material-design-icons">Configure to use Material Design Icons</a></li>
+<li><a href="#configure-your-angular-project-to-use-flex-layout">Configure your Angular Project to use Flex Layout</a></li>
+<li><a href="#updating-appmodule">Updating AppModule</a></li>
+<li><a href="#adding-a-material-toolbar">Adding a Material Toolbar</a></li>
+<li><a href="#adding-styles">Adding Styles</a></li>
+<li><a href="#conclusions-2">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#angular-components-part-1">Angular Components Part 1</a>
+<ul>
+<li><a href="#exercise-resources">Exercise Resources</a></li>
+<li><a href="#objectives-and-outcomes-3">Objectives and Outcomes</a></li>
+<li><a href="#adding-a-menu-component">Adding a Menu Component</a></li>
+<li><a href="#creating-the-menu">Creating the Menu</a></li>
+<li><a href="#conclusions-3">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#angular-components-part-2">Angular Components Part 2</a>
+<ul>
+<li><a href="#objectives-and-outcomes-4">Objectives and Outcomes</a></li>
+<li><a href="#updating-the-menu-template">Updating the Menu Template</a></li>
+<li><a href="#add-a-card-component">Add a Card Component</a></li>
+<li><a href="#conclusions-4">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#assignment-1-angular-components">Assignment 1: Angular Components</a>
+<ul>
+<li><a href="#instructions">Instructions</a></li>
+<li><a href="#objectives-and-outcomes-5">Objectives and Outcomes</a></li>
+<li><a href="#assignment-requirements">Assignment Requirements</a></li>
+<li><a href="#task-1">Task 1</a></li>
+<li><a href="#task-2">Task 2</a></li>
+<li><a href="#task-3">Task 3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="introduction">Introduction</h2>
+
+<p>About this course: This course concentrates mainly on Javascript based front-end frameworks, and in particular the Angular framework (Currently Ver. 4.x). This course will use Typescript for developing Angular application. Typescript features will be introduced in the context of Angular as part of the exercises. You will also get an introduction to the use of Angular Material and Angular Flex-Layout for responsive UI design. You will be introduced to various aspects of Angular including components, directives and services. You will learn about data binding, Angular router and its use for developing single-page applications. You will also learn about designing both template-driven forms and reactive forms. A quick introduction to Observables, reactive programming and RxJS in the context of Angular is included. You will then learn about Angular support for client-server communication and the use of REST API on the server side. You will use Restangular for communicating with a server supporting the REST API. A quick tour through Angular animation support and Angular testing rounds off the course. You must have either completed the previous course in the specialization on Bootstrap 4, or have a working knowledge of front end web-UI frameworks to be able to navigate this course. Also a good working knowledge of JavaScript, especially ES 5 is strongly recommended.</p>
+<p>At the end of this course you will:</p>
+<ul>
+<li>Be familiar with client-side Javascript frameworks and the Angular framework</li>
+<li>Be able to implement single page applications in Angular</li>
+<li>Be able to use various Angular features including directives, components and services</li>
+<li>Be able to implement a functional front-end web application using Angular</li>
+<li>Be able to use Angular Material and Angular Flex-Layout for designing responsive Angular applications</li>
+<li>Be able to use Observables and RxJS in the context of Angular applications</li>
+</ul>
+<p>Who is this class for: This course is aimed at students with sufficient knowledge of Web technologies like HTML, CSS and JavaScript. A good working knowledge of JavaScript, especially ES 5 is strongly recommended.</p>
+<hr>
+<p><a href="https://www.coursera.org/learn/angular">https://www.coursera.org/learn/angular</a></p>
+<h2 class="mume-header" id="week-1">Week 1</h2>
+
+<ul>
+<li><a href="#basics-of-nodejs-and-npm">Basics of Node.js and NPM</a>
+<ul>
+<li><a href="#objectives-and-outcomes">Objectives and Outcomes</a></li>
+<li><a href="#initializing-packagejson">Initializing package.json</a></li>
+<li><a href="#installing-an-npm-module">Installing an NPM Module</a></li>
+<li><a href="#setting-up-gitignore">Setting up .gitignore</a></li>
+<li><a href="#conclusions">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#getting-started-with-angular">Getting Started with Angular</a>
+<ul>
+<li><a href="#objectives-and-outcomes-1">Objectives and Outcomes</a></li>
+<li><a href="#installing-angular-cli">Installing <em>Angular-CLI</em></a></li>
+<li><a href="#generating-and-serving-an-angular-roject-using-angular-cli">Generating and Serving an Angular Project using Angular-CLI</a></li>
+<li><a href="#conclusions-1">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#configuring-your-angular-application">Configuring your Angular Application</a>
+<ul>
+<li><a href="#objectives-and-outcomes-2">Objectives and Outcomes</a></li>
+<li><a href="#configure-your-angular-project-to-use-angular-material">Configure your Angular Project to use Angular Material</a></li>
+<li><a href="#configure-to-use-material-design-icons">Configure to use Material Design Icons</a></li>
+<li><a href="#configure-your-angular-project-to-use-flex-layout">Configure your Angular Project to use Flex Layout</a></li>
+<li><a href="#updating-appmodule">Updating AppModule</a></li>
+<li><a href="#adding-a-material-toolbar">Adding a Material Toolbar</a></li>
+<li><a href="#adding-styles">Adding Styles</a></li>
+<li><a href="#conclusions-2">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#angular-components-part-1">Angular Components Part 1</a>
+<ul>
+<li><a href="#exercise-resources">Exercise Resources</a></li>
+<li><a href="#objectives-and-outcomes-3">Objectives and Outcomes</a></li>
+<li><a href="#adding-a-menu-component">Adding a Menu Component</a></li>
+<li><a href="#creating-the-menu">Creating the Menu</a></li>
+<li><a href="#conclusions-3">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#angular-components-part-2">Angular Components Part 2</a>
+<ul>
+<li><a href="#objectives-and-outcomes-4">Objectives and Outcomes</a></li>
+<li><a href="#updating-the-menu-template">Updating the Menu Template</a></li>
+<li><a href="#add-a-card-omponent">Add a Card Component</a></li>
+<li><a href="#conclusions-4">Conclusions</a></li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="basics-of-nodejs-and-npm">Basics of Node.js and NPM</h3>
+
+<h4 class="mume-header" id="objectives-and-outcomes">Objectives and Outcomes</h4>
+
+<p>In this exercise you will learn the basics of Node and NPM. At the end of this exercise, you will be able to:</p>
+<ul>
+<li>Set up package.json file in the project folder for configuring your Node and NPM for this project</li>
+<li>Install a NPM module and make use of it within your project</li>
+</ul>
+<h4 class="mume-header" id="initializing-packagejson">Initializing package.json</h4>
+
+<p>At the command prompt in your <strong>git-test</strong> folder, type</p>
+<pre class="language-">npm init
+</pre>
+<p>Follow along the prompts and answer the questions as follows: accept the default values for most of the entries, except set the entry point to index.html<br>
+This should create a <em>package.json</em> file in your <strong>git-test</strong> folder.</p>
+<h4 class="mume-header" id="installing-an-npm-module">Installing an NPM Module</h4>
+
+<p>Install an NPM module, lite-server, that allows you to run a Node.js based development web server and serve up your project files. To do this, type the following at the prompt:</p>
+<pre class="language-">npm install lite-server --save-dev
+</pre>
+<p>You can check out more documentation on lite-server <a href="https://github.com/johnpapa/lite-server">here</a>.<br>
+Next, open package.json in your editor and modify it as shown below. Note the addition of two lines, line 7 and line 9.</p>
+<pre class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"git-test"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"This is the Git and Node basic learning project"</span><span class="token punctuation">,</span>
+  <span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"index.html"</span><span class="token punctuation">,</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"npm run lite"</span><span class="token punctuation">,</span>
+    <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><span class="token punctuation">,</span>
+    <span class="token property">"lite"</span><span class="token operator">:</span> <span class="token string">"lite-server"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"repository"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"git"</span><span class="token punctuation">,</span>
+    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"git+https://jogesh_k_muppala@bitbucket.org/jogesh_k_muppala/git-test.git"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"ISC"</span><span class="token punctuation">,</span>
+  <span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"https://bitbucket.org/jogesh_k_muppala/git-test#readme"</span><span class="token punctuation">,</span>
+  <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"lite-server"</span><span class="token operator">:</span> <span class="token string">"^2.2.2"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</pre>
+<p>Next, start the development server by typing the following at the prompt:</p>
+<pre class="language-">npm start
+</pre>
+<p>This should open your <em>index.html</em> page in your default browser.<br>
+If you now open the <em>index.html</em> page in an editor and make changes and save, the browser should immediately refresh to reflect the changes.</p>
+<h4 class="mume-header" id="setting-up-gitignore">Setting up .gitignore</h4>
+
+<p>Next, create a file in your project directory named <em>.gitignore</em> (<strong>Note</strong>: the name starts with a period)Then, add the following to the .gitignore file</p>
+<pre class="language-">node_modules
+</pre>
+<p>The do a git commit and push the changes to the online repository. You will note that the node_modules folder will not be added to the commit, and will not be uploaded to the repository.</p>
+<h4 class="mume-header" id="conclusions">Conclusions</h4>
+
+<p>In this exercise you learnt to set up package.json, install a npm package and start a development server.</p>
+<h3 class="mume-header" id="getting-started-with-angular">Getting Started with Angular</h3>
+
+<h4 class="mume-header" id="objectives-and-outcomes-1">Objectives and Outcomes</h4>
+
+<p>In this first Angular exercise, you will first install <em>angular-cli</em>, the command line tool for scaffolding Angular applications. You will then use the tool to scaffold out a basic Angular application. We will thereafter develop this application into a full-fledged Angular application in the process of doing the exercises in this course. At the end of this exercise you will be able to:</p>
+<ul>
+<li>Install <em>angular-cli</em></li>
+<li>Scaffold out a basic Angular application</li>
+</ul>
+<h4 class="mume-header" id="installing-angular-cli">Installing <em>Angular-CLI</em></h4>
+
+<p>From the Angular-CLI documentation we learn that the Angular-CLI makes it easy to create an application that already works, right out of the box. It already follows the best practices suggested by the Angular community!</p>
+<p>To install <em>angular-cli</em> globally, type the following at the prompt:</p>
+<pre class="language-">npm install -g @angular/cli
+</pre>
+<p><strong>Note</strong>:Use <em>sudo</em> on a Mac and Linux</p>
+<p>This will make the command line tool for creating Angular applications. To learn more about the various commands that this CLI provides, type at the prompt:</p>
+<pre class="language-">ng help
+</pre>
+<h4 class="mume-header" id="generating-and-serving-an-angular-project-using-angular-cli">Generating and Serving an Angular Project using Angular-CLI</h4>
+
+<p>At a convenient location on your computer, create a folder named <em>Angular</em> and move into that folder.<br>
+Then type the following at the prompt to create a new Angular application named <em>conFusion</em>:</p>
+<pre class="language-">ng new conFusion -dir=&lt;The path of your Angular folder&gt;/conFusion --style=scss
+</pre>
+<p>This should create a new folder named <em>conFusion</em> within your <em>Angular</em> folder and create the Angular application in that folder.<br>
+Move to the conFusion folder and type the following at the prompt:</p>
+<pre class="language-">npm install
+ng serve --open
+</pre>
+<p>This will compile the project and then open a tab in your default browser at the address <a href="http://localhost:4200">http://localhost:4200</a>.<br>
+You can initialize your project to be a Git repository by typing the following commands at the prompt:</p>
+<pre class="language-">git init
+git add .
+git commit -m &quot;Initial Setup&quot;
+</pre>
+<p><strong>Note</strong>: Some of you may find that Angular CLI automatically does the first commit on your computer and initializes the Git repository. Please do a &quot;git status&quot; in the project folder just to check if an automatic commit has been done. This doesn't happen on my computer. Hence the above instructions.</p>
+<p>Thereafter you can set up an online Git repository and synchronize your project to the online repository. Make sure that the online Git repository is a private repository.</p>
+<h4 class="mume-header" id="conclusions-1">Conclusions</h4>
+
+<p>In this exercise you installed the Angular CLI tool and created a basic Angular project and served up the compiled project to your browser.</p>
+<h3 class="mume-header" id="configuring-your-angular-application">Configuring your Angular Application</h3>
+
+<h4 class="mume-header" id="objectives-and-outcomes-2">Objectives and Outcomes</h4>
+
+<p>In this exercise we will set up our project to use Angular Material and Angular Flex Layout. We will then introduce our first Angular Material component into our application. At the end of this exercise you will be able to:</p>
+<ul>
+<li>Configure your Angular project to use Angular Material and Flex Layout.</li>
+<li>Start using Material components in your application.</li>
+</ul>
+<h4 class="mume-header" id="configure-your-angular-project-to-use-angular-material">Configure your Angular Project to use Angular Material</h4>
+
+<p><strong>Note</strong>: This course is designed with Angular Material Beta.3. Before you proceed forward, you may wish to read the detailed information posted in <a href="https://www.coursera.org/learn/angular/discussions/all/threads/4yxVk7DXEee0mQrUfDuicA">https://www.coursera.org/learn/angular/discussions/all/threads/4yxVk7DXEee0mQrUfDuicA</a> where I have clearly explained about dealing with the newer Beta versions of Angular Material (up to Beta.12). I would strongly suggest that to proceed ahead with the course with minimal disruption, please install the Beta.8 version of Angular Material. With this installation, the course instructions will still work as given.</p>
+<p>To configure your project to use Angular material, type the following at the prompt to install Angular Material, Angular Animations and HammerJS:</p>
+<pre class="language-">npm install @angular/material@2.0.0-beta.8 --save
+npm install @angular/cdk@2.0.0-beta.8 --save
+npm install --save @angular/animations
+npm install --save hammerjs
+</pre>
+<h4 class="mume-header" id="configure-to-use-material-design-icons">Configure to use Material Design Icons</h4>
+
+<p>Next, include the following into the <head> of index.html to make use of Material Design icons:</head></p>
+<pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com/icon?family<span class="token punctuation">=</span>Material+Icons<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</pre>
+<h4 class="mume-header" id="configure-your-angular-project-to-use-flex-layout">Configure your Angular Project to use Flex Layout</h4>
+
+<p>Next, install Angular Flex Layout as follows:</p>
+<pre class="language-">npm install --save @angular/flex-layout@latest
+</pre>
+<h4 class="mume-header" id="updating-appmodule">Updating AppModule</h4>
+
+<p>Then, you need to import the Angular Animations Module, Angular Material Module, Flex Layout Module and hammerjs into your root module (src/app/app.module.ts) as follows:</p>
+<pre class="language-ts"><span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> BrowserAnimationsModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/platform-browser/animations'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> MaterialModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/material'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> FlexLayoutModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/flex-layout'</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+
+<span class="token keyword">import</span> <span class="token string">'hammerjs'</span><span class="token punctuation">;</span>
+
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+
+  <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+
+  imports<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+
+    <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token punctuation">,</span>
+
+    BrowserAnimationsModule<span class="token punctuation">,</span>
+    MaterialModule<span class="token punctuation">,</span>
+    FlexLayoutModule
+
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+    <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+</pre>
+<h4 class="mume-header" id="adding-a-material-toolbar">Adding a Material Toolbar</h4>
+
+<p>Open app.component.html and replace its contents with the following code:</p>
+<pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-toolbar</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>Ristorante Con Fusion<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-toolbar</span><span class="token punctuation">></span></span>
+</pre>
+<h4 class="mume-header" id="adding-styles">Adding Styles</h4>
+
+<p>Add the following styles to styles.scss file:</p>
+<pre class="language-scss"><span class="token keyword">@import</span> <span class="token string">'~@angular/material/prebuilt-themes/deeppurple-amber.css'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// some basic resets</span>
+
+<span class="token selector">body </span><span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Roboto, sans-serif<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+</pre>
+<p>This will add a built-in Material theme to our application.<br>
+Do a Git commit with the message &quot;Configuring Angular&quot;</p>
+<h4 class="mume-header" id="conclusions-2">Conclusions</h4>
+
+<p>In this exercise we learnt to use Angular Material and Flex Layout NgModules in our Angular application.</p>
+<h3 class="mume-header" id="angular-components-part-1">Angular Components Part 1</h3>
+
+<h4 class="mume-header" id="exercise-resources">Exercise Resources</h4>
+
+<p><a href="resources/_db284e833226b010f3e252d9220f85d5_images.zip">images.zip</a></p>
+<h4 class="mume-header" id="objectives-and-outcomes-3">Objectives and Outcomes</h4>
+
+<p>In this exercise you will add the first component to your Angular application and update its template. At the end of this exercise you will be able to:</p>
+<ul>
+<li>Add components to your Angular application</li>
+<li>Update the templates of your component.</li>
+</ul>
+<h4 class="mume-header" id="adding-a-menu-component">Adding a Menu Component</h4>
+
+<p>First, download the images.zip file provided above and then unzip the file. Move the resulting images folder containing some PNG files to the Angular project's src/assets folder. These image files will be useful for our exercises.<br>
+Next, use the CLI's ng generate command to generate a new component named menu as follows:</p>
+<pre class="language-">ng generate component menu
+</pre>
+<p>This will create the necessary files for the menu component in a folder named menu, and also import this component into app.module.ts.<br>
+Next, open app.component.html file and add the following after the toolbar:</p>
+<pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>app-menu</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>app-menu</span><span class="token punctuation">></span></span>
+</pre>
+<h4 class="mume-header" id="creating-the-menu">Creating the Menu</h4>
+
+<p>Next, create a folder named shared under the src/app folder. To this folder, add a file named dish.ts with the following code:</p>
+<pre class="language-ts"><span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Dish</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+    image<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+    category<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+    label<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+    price<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+    description<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+<p>Update menu.component.ts as follows to add in the data for four menu items:</p>
+<pre class="language-ts"><span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Dish <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../shared/dish'</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">MenuComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>
+	dishes<span class="token punctuation">:</span> Dish<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+		<span class="token punctuation">{</span>
+			name<span class="token punctuation">:</span><span class="token string">'Uthappizza'</span><span class="token punctuation">,</span>
+			image<span class="token punctuation">:</span> <span class="token string">'/assets/images/uthappizza.png'</span><span class="token punctuation">,</span>
+			category<span class="token punctuation">:</span> <span class="token string">'mains'</span><span class="token punctuation">,</span>
+			label<span class="token punctuation">:</span><span class="token string">'Hot'</span><span class="token punctuation">,</span>
+			price<span class="token punctuation">:</span><span class="token string">'4.99'</span><span class="token punctuation">,</span>
+			description<span class="token punctuation">:</span><span class="token string">'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.'</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">{</span>
+			name<span class="token punctuation">:</span><span class="token string">'Zucchipakoda'</span><span class="token punctuation">,</span>
+			image<span class="token punctuation">:</span> <span class="token string">'/assets/images/zucchipakoda.png'</span><span class="token punctuation">,</span>
+			category<span class="token punctuation">:</span> <span class="token string">'appetizer'</span><span class="token punctuation">,</span>
+			label<span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
+			price<span class="token punctuation">:</span><span class="token string">'1.99'</span><span class="token punctuation">,</span>
+			description<span class="token punctuation">:</span><span class="token string">'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce.'</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">{</span>
+			name<span class="token punctuation">:</span><span class="token string">'Vadonut'</span><span class="token punctuation">,</span>
+			image<span class="token punctuation">:</span> <span class="token string">'/assets/images/vadonut.png'</span><span class="token punctuation">,</span>
+			category<span class="token punctuation">:</span> <span class="token string">'appetizer'</span><span class="token punctuation">,</span>
+			label<span class="token punctuation">:</span><span class="token string">'New'</span><span class="token punctuation">,</span>
+			price<span class="token punctuation">:</span><span class="token string">'1.99'</span><span class="token punctuation">,</span>
+			description<span class="token punctuation">:</span><span class="token string">'A quintessential ConFusion experience, is it a vada or is it a donut?'</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">{</span>
+			name<span class="token punctuation">:</span><span class="token string">'ElaiCheese Cake'</span><span class="token punctuation">,</span>
+			image<span class="token punctuation">:</span> <span class="token string">'/assets/images/elaicheesecake.png'</span><span class="token punctuation">,</span>
+			category<span class="token punctuation">:</span> <span class="token string">'dessert'</span><span class="token punctuation">,</span>
+			label<span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
+			price<span class="token punctuation">:</span><span class="token string">'2.99'</span><span class="token punctuation">,</span>
+			description<span class="token punctuation">:</span><span class="token string">'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms.'</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</pre>
+<p>Next, update the menu.component.html template as follows:</p>
+<pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span>
+     <span class="token attr-name">fxLayout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>column<span class="token punctuation">"</span></span>
+     <span class="token attr-name">fxLayoutGap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>10px<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-list</span> <span class="token attr-name">fxFlex</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-list-item</span> <span class="token attr-name">*ngFor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>let dish of dishes<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">md-list-avatar</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span>{{dish.image}}</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span>{{dish.name}}</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">md-line</span><span class="token punctuation">></span></span> {{dish.name}} <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">md-line</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span> {{dish.description}} <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-list-item</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-list</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</pre>
+<p>Add the following CSS class to styles.scss file:</p>
+<pre class="language-scss"><span class="token selector">.container </span><span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">20</span>px<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span>flex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+<p>Save all changes and do a Git commit with the message &quot;Components Part 1&quot;.</p>
+<h4 class="mume-header" id="conclusions-3">Conclusions</h4>
+
+<p>In this exercise we added a new component to our Angular application, added data to its class, and then updated the component template to show the information in the web page.</p>
+<h3 class="mume-header" id="angular-components-part-2">Angular Components Part 2</h3>
+
+<h4 class="mume-header" id="objectives-and-outcomes-4">Objectives and Outcomes</h4>
+
+<p>In this exercise we will continue modifying the component template from the previous exercise. Instead of a list, we will use a grid list Angular material component to display the menu in a different way. Also we will use the Card component to display the details of a selected dish. At the end of this exercise you will be able to:</p>
+<ul>
+<li>Make use of the Angular material grid list component to display a list of items.</li>
+<li>Use the material Card component to display detailed information.</li>
+<li>Use a built-in Angular pipe to turn a word into uppercase in the template.</li>
+</ul>
+<h4 class="mume-header" id="updating-the-menu-template">Updating the Menu Template</h4>
+
+<p>Open <em>menu.component.html</em> and update its content as follows:</p>
+<pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span>
+     <span class="token attr-name">fxLayout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>column<span class="token punctuation">"</span></span>
+     <span class="token attr-name">fxLayoutGap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>10px<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">fxFlex</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>Menu<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">fxFlex</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-grid-list</span> <span class="token attr-name">cols</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token attr-name">rowHeight</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>200px<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-grid-tile</span> <span class="token attr-name">*ngFor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>let dish of dishes<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>200px<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span>{{dish.image}}</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span>{{dish.name}}</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-grid-tile-footer</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">md-line</span><span class="token punctuation">></span></span>{{dish.name | uppercase}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-grid-tile-footer</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-grid-tile</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-grid-list</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</pre>
+<p>Here we are using the Grid list Angular material component to display the information.<br>
+Also, update the <em>menu.component.ts</em> file as follows to move the details of the dishes into a constant, in preparation for introducing services in a future exercise:</p>
+<pre class="language-ts"> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+
+ <span class="token keyword">const</span> DISHES<span class="token punctuation">:</span> Dish<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+ <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+
+ <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+
+ <span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">MenuComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>
+
+  dishes <span class="token operator">=</span> DISHES<span class="token punctuation">;</span>
+
+  selectedDish <span class="token operator">=</span> DISHES<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+ <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+
+ <span class="token punctuation">}</span>
+</pre>
+<h4 class="mume-header" id="add-a-card-component">Add a Card Component</h4>
+
+<p>Update the menu.component.html template to display the details of a selected dish using the Material Card component as follows:</p>
+<pre class="language-html">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">fxFlex</span> <span class="token attr-name">*ngIf</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>selectedDish<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-card</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-card-header</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-card-title</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>{{selectedDish.name | uppercase}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-card-title</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-card-header</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">md-card-image</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span>{{selectedDish.image}}</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span>{{selectedDish.name}}</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-card-content</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>{{selectedDish.description}}
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-card-content</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>md-card-actions</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">md-button</span><span class="token punctuation">></span></span>LIKE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">md-button</span><span class="token punctuation">></span></span>SHARE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-card-actions</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>md-card</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</pre>
+<p>Save the changes and do a Git commit with the message &quot;Components Part 2&quot;.</p>
+<h4 class="mume-header" id="conclusions-4">Conclusions</h4>
+
+<p>In this exercise we used a grid list to display the information in the menu template. Also we used a card to display the details of a selected dish.</p>
+<h3 class="mume-header" id="assignment-1-angular-components">Assignment 1: Angular Components</h3>
+
+<h4 class="mume-header" id="instructions">Instructions</h4>
+
+<p>In this assignment you will add a new component to the Angular application to show the details of a selected dish.<br>
+You will use the Angular Material card component and the list component to prepare the template for this new component.</p>
+<h4 class="mume-header" id="objectives-and-outcomes-5">Objectives and Outcomes</h4>
+
+<p>In this assignment, you will continue to work with the Angular application that you have been developing in the exercises. You will add a new component named dishdetail that will display the details of a selected dish. You will then design the template for the component using Angular material components. At the end of this assignment, you should have completed the following tasks:</p>
+<ul>
+<li>Created a new dishdetail component and added it to your Angular application and included it into the template of the menu component.</li>
+<li>Updated the template of the dishdetail component to display the details of the selected dish using an Angular card component.</li>
+<li>Updated the template of the dishdetail component to display the list of comments about the dish using the Angular material list component.</li>
+</ul>
+<h4 class="mume-header" id="assignment-requirements">Assignment Requirements</h4>
+
+<p>This assignment requires you to complete the following tasks. Detailed instructions for each task are given below. The picture of the completed web page included below indicates the location within the web page that will be updated by the three tasks.</p>
+<h4 class="mume-header" id="task-1">Task 1</h4>
+
+<p>In this task you will be adding a new dishdetail component to your Angular application and include the component into the menu component's template so that the details of a specific dish are displayed there:</p>
+<ul>
+<li>Use Angular CLI to create a new component named dishdetail,</li>
+<li>Replace the card showing the selected dish in menu component's template with the dishdetail component, and</li>
+<li>Update the template of the dishdetail component with the following code:</li>
+</ul>
+<pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span>
+    <span class="token attr-name">fxLayout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span>
+    <span class="token attr-name">fxLayout.sm</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>column<span class="token punctuation">"</span></span>
+    <span class="token attr-name">fxLayout.xs</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>column<span class="token punctuation">"</span></span>
+    <span class="token attr-name">fxLayoutAlign.gt-md</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>space-around center<span class="token punctuation">"</span></span>
+    <span class="token attr-name">fxLayoutGap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>10px<span class="token punctuation">"</span></span>
+    <span class="token attr-name">fxLayoutGap.xs</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">fxFlex</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>40<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Display the details of the Dish here<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">fxFlex</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>40<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Display the list of comments here<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</pre>
+<h4 class="mume-header" id="task-2">Task 2</h4>
+
+<p>In this task you will be adding a card component to the dishdetail template to display the details of the dish given above:</p>
+<ul>
+<li>Add a new constant to the dishdetail.component.ts file named DISH as follows, and initialize it to the JavaScript object given below that contains the details of the dish and comments about the dish:</li>
+</ul>
+<pre class="language-ts"><span class="token keyword">const</span> DISH <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'Uthappizza'</span><span class="token punctuation">,</span>
+  image<span class="token punctuation">:</span> <span class="token string">'/assets/images/uthappizza.png'</span><span class="token punctuation">,</span>
+  category<span class="token punctuation">:</span> <span class="token string">'mains'</span><span class="token punctuation">,</span>
+  label<span class="token punctuation">:</span> <span class="token string">'Hot'</span><span class="token punctuation">,</span>
+  price<span class="token punctuation">:</span> <span class="token string">'4.99'</span><span class="token punctuation">,</span>
+  description<span class="token punctuation">:</span> <span class="token string">'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.'</span><span class="token punctuation">,</span>
+  comments<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      rating<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+      comment<span class="token punctuation">:</span> <span class="token string">"Imagine all the eatables, living in conFusion!"</span><span class="token punctuation">,</span>
+      author<span class="token punctuation">:</span> <span class="token string">"John Lemon"</span><span class="token punctuation">,</span>
+      date<span class="token punctuation">:</span> <span class="token string">"2012-10-16T17:57:28.556094Z"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      rating<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+      comment<span class="token punctuation">:</span> <span class="token string">"Sends anyone to heaven, I wish I could get my mother-in-law to eat it!"</span><span class="token punctuation">,</span>
+      author<span class="token punctuation">:</span> <span class="token string">"Paul McVites"</span><span class="token punctuation">,</span>
+      date<span class="token punctuation">:</span> <span class="token string">"2014-09-05T17:57:28.556094Z"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      rating<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      comment<span class="token punctuation">:</span> <span class="token string">"Eat it, just eat it!"</span><span class="token punctuation">,</span>
+      author<span class="token punctuation">:</span> <span class="token string">"Michael Jaikishan"</span><span class="token punctuation">,</span>
+      date<span class="token punctuation">:</span> <span class="token string">"2015-02-13T17:57:28.556094Z"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      rating<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+      comment<span class="token punctuation">:</span> <span class="token string">"Ultimate, Reaching for the stars!"</span><span class="token punctuation">,</span>
+      author<span class="token punctuation">:</span> <span class="token string">"Ringo Starry"</span><span class="token punctuation">,</span>
+      date<span class="token punctuation">:</span> <span class="token string">"2013-12-02T17:57:28.556094Z"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      rating<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      comment<span class="token punctuation">:</span> <span class="token string">"It's your birthday, we're gonna party!"</span><span class="token punctuation">,</span>
+      author<span class="token punctuation">:</span> <span class="token string">"25 Cent"</span><span class="token punctuation">,</span>
+      date<span class="token punctuation">:</span> <span class="token string">"2011-12-02T17:57:28.556094Z"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</pre>
+<p><strong>NOTE</strong>: Do not use the Dish type from the dish.ts file to declare either the const DISH or the variable dish below to be of the type Dish. We need to update the Dish type which will be done in the next module.</p>
+<ul>
+<li>Now introduce a new variable in the dishdetail.component.ts file in the dishdetail class called dish and set it equal to the DISH constant above:</li>
+</ul>
+<pre class="language-ts">dish <span class="token operator">=</span> DISH<span class="token punctuation">;</span>
+</pre>
+<ul>
+<li>The Angular material card component should be used to display the details of the dish as shown above. Please remember to use the Angular &quot;uppercase&quot; pipe on the name displayed in the card title. Also apply the *ngIf=&quot;dish&quot; structural directive to both the <md-card> that displays the details of the dish.</md-card></li>
+</ul>
+<h4 class="mume-header" id="task-3">Task 3</h4>
+
+<p>In this task you will use the comments that are included in the dish object above to display a list of the comments for the dish. Please use your JavaScript knowledge to recall how you would access an inner property in a JavaScript object that itself points to an array of JavaScript objects (comments). This task involves the following steps:</p>
+<ul>
+<li>Use the Angular material list to display the list of comments as shown below. Also apply the *ngIf=&quot;dish&quot; structural directive to both the <md-list> that displays the list of comments for the dish.</md-list></li>
+<li>Display the date of the comment by processing it through the Angular built-in date pipe.</li>
+</ul>
+<p><img src="resources/POMUDQ66EeeDpgoJnVyhvA_6efa3fc162f92db6794350a3346288a5_Assignment1.png" alt="Result"></p>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#front-end-javascript-frameworks-angular">Front-End JavaScript Frameworks: Angular</a>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#week-1">Week 1</a>
+<ul>
+<li><a href="#basics-of-nodejs-and-npm">Basics of Node.js and NPM</a>
+<ul>
+<li><a href="#objectives-and-outcomes">Objectives and Outcomes</a></li>
+<li><a href="#initializing-packagejson">Initializing package.json</a></li>
+<li><a href="#installing-an-npm-module">Installing an NPM Module</a></li>
+<li><a href="#setting-up-gitignore">Setting up .gitignore</a></li>
+<li><a href="#conclusions">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#getting-started-with-angular">Getting Started with Angular</a>
+<ul>
+<li><a href="#objectives-and-outcomes-1">Objectives and Outcomes</a></li>
+<li><a href="#installing-angular-cli">Installing <em>Angular-CLI</em></a></li>
+<li><a href="#generating-and-serving-an-angular-project-using-angular-cli">Generating and Serving an Angular Project using Angular-CLI</a></li>
+<li><a href="#conclusions-1">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#configuring-your-angular-application">Configuring your Angular Application</a>
+<ul>
+<li><a href="#objectives-and-outcomes-2">Objectives and Outcomes</a></li>
+<li><a href="#configure-your-angular-project-to-use-angular-material">Configure your Angular Project to use Angular Material</a></li>
+<li><a href="#configure-to-use-material-design-icons">Configure to use Material Design Icons</a></li>
+<li><a href="#configure-your-angular-project-to-use-flex-layout">Configure your Angular Project to use Flex Layout</a></li>
+<li><a href="#updating-appmodule">Updating AppModule</a></li>
+<li><a href="#adding-a-material-toolbar">Adding a Material Toolbar</a></li>
+<li><a href="#adding-styles">Adding Styles</a></li>
+<li><a href="#conclusions-2">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#angular-components-part-1">Angular Components Part 1</a>
+<ul>
+<li><a href="#exercise-resources">Exercise Resources</a></li>
+<li><a href="#objectives-and-outcomes-3">Objectives and Outcomes</a></li>
+<li><a href="#adding-a-menu-component">Adding a Menu Component</a></li>
+<li><a href="#creating-the-menu">Creating the Menu</a></li>
+<li><a href="#conclusions-3">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#angular-components-part-2">Angular Components Part 2</a>
+<ul>
+<li><a href="#objectives-and-outcomes-4">Objectives and Outcomes</a></li>
+<li><a href="#updating-the-menu-template">Updating the Menu Template</a></li>
+<li><a href="#add-a-card-component">Add a Card Component</a></li>
+<li><a href="#conclusions-4">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#assignment-1-angular-components">Assignment 1: Angular Components</a>
+<ul>
+<li><a href="#instructions">Instructions</a></li>
+<li><a href="#objectives-and-outcomes-5">Objectives and Outcomes</a></li>
+<li><a href="#assignment-requirements">Assignment Requirements</a></li>
+<li><a href="#task-1">Task 1</a></li>
+<li><a href="#task-2">Task 2</a></li>
+<li><a href="#task-3">Task 3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    </body>
+    
+    
+    
+    <script>
+(function bindTaskListEvent() {
+  var taskListItemCheckboxes = document.body.getElementsByClassName('task-list-item-checkbox')
+  for (var i = 0; i < taskListItemCheckboxes.length; i++) {
+    var checkbox = taskListItemCheckboxes[i]
+    var li = checkbox.parentElement
+    if (li.tagName !== 'LI') li = li.parentElement
+    if (li.tagName === 'LI') {
+      li.classList.add('task-list-item')
+    }
+  }
+}())    
+</script>
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  </html>
